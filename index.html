@@ -8,6 +8,9 @@
   <title>Drum-Bass</title>
 </head>
 <body>
+  <div class="preloader">
+    <p>Cargando...</p>
+  </div>
   <div class="content">
     <div class="container">
       <div class="keys">
@@ -71,7 +74,8 @@
     window.onload = function(){
       //Play sound
       window.addEventListener('keydown', playSound)
-
+      setTimeout(()=>{document.querySelector('.preloader').style.display='none'},3000)
+      
       //Remove the playing class when the key is up
       keys.forEach(function(key){
         key.addEventListener('transitionend',function(){
